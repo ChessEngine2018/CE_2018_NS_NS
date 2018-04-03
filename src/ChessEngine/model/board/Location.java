@@ -24,7 +24,11 @@ public class Location {
 		this.row = r;
 		this.col = c;
 		this.piece = p;
-		occupied = true;
+		if (piece == null) {
+			occupied = false;
+		} else {
+			occupied = true;
+		}
 	}
 
 	public Location(int r, int c) {
