@@ -1,5 +1,5 @@
 package ChessEngine.model.piece;
 
-public class Knight {
+public class Knight extends Piece {
 
 }

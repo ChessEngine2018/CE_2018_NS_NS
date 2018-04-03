@@ -1,6 +1,6 @@
 package ChessEngine.model.piece;
 
-public class Bishop {
+public class Bishop extends Piece {
 
 }
  

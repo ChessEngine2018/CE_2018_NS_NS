@@ -1,5 +1,5 @@
 package ChessEngine.model.piece;
 
-public class Pawn {
+public class Pawn extends Piece {
 
 }

@@ -1,5 +1,5 @@
 package ChessEngine.model.piece;
 
-public class Queen {
+public class Queen extends Piece {
 
 }
