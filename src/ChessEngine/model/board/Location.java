@@ -1,4 +1,5 @@
 package ChessEngine.model.board;
+
 import ChessEngine.model.piece.Piece;
 
 /**
@@ -9,44 +10,53 @@ import ChessEngine.model.piece.Piece;
  *
  */
 public class Location {
-	
+
 	private int row;
 	private int col;
 	private Piece piece;
 	private Boolean occupied;
 	private Board grid;
-	
+
 	public Location(int r, int c, Piece p) {
+		if (r > 7 || c > 7 || c < 0 || r < 0) {
+			throw new IllegalArgumentException();
+		}
 		this.row = r;
 		this.col = c;
 		this.piece = p;
 		occupied = true;
 	}
-	
+
 	public Location(int r, int c) {
-		this.row = r;
-		this.col = c;
-		occupied = false;
+		new Location(r, c, null);
 	}
-	
+
 	public int getRow() {
 		return this.row;
 	}
-	
+
 	public int getCol() {
 		return this.col;
 	}
-	
+
 	public Piece getPiece() {
 		return this.piece;
 	}
-	
+
 	public Boolean isOccupied() {
 		return occupied;
 	}
-	
+
+	/**
+	 * Method moves piece to specified location EMPTY location, and returns whether
+	 * or not operation could be carried out
+	 * 
+	 * @param location
+	 *            location to move piece to
+	 * @return whether or not action was carried out
+	 */
 	public boolean moveToEmptyGrid(Location location) {
-		if(location.isOccupied()) {
+		if (location.isOccupied()) {
 			return false;
 		} else {
 			this.piece.move(location);
@@ -56,12 +66,12 @@ public class Location {
 			return true;
 		}
 	}
-	
+
 	public boolean takePiece() {
 		return false;
 	}
-	
+
 	public void add() {
-		
+
 	}
 }
