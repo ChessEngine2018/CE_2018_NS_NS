@@ -17,6 +17,10 @@ public class Board {
 		this.grid = new Grid(8, 8);
 	}
 	
+	public void clear() {
+		this.grid.clearGrid();
+	}
+	
 	public void add(Piece p) {
 		
 	}

@@ -37,32 +37,4 @@ public class Location {
 	public void setPiece(Piece p) {
 		this.piece = p;
 	}
-
-	/**
-	 * Method moves piece to specified location EMPTY location, and returns whether
-	 * or not operation could be carried out
-	 * 
-	 * @param location
-	 *            location to move piece to
-	 * @return whether or not action was carried out
-	 */
-	public boolean moveToEmptyGrid(Location location) {
-		if (location.isOccupied()) {
-			return false;
-		} else {
-			this.piece.move(location);
-			grid.add(piece);
-			this.piece = null;
-			occupied = false;
-			return true;
-		}
-	}
-
-	public boolean takePiece() {
-		return false;
-	}
-
-	public void add() {
-
-	}
 }
