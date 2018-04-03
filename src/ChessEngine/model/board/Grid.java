@@ -1,6 +1,8 @@
 package ChessEngine.model.board;
 
-/*
+import ChessEngine.model.piece.Piece;
+
+/**
  * Class defines a grid of Location objects that represent spaces on the board, and
  * provides operations to edit grid
  */
@@ -28,16 +30,5 @@ public class Grid {
 			}
 		}
 	}
-	
-	public boolean isOccupied(int row, int col) {
-		if (row > rows || col > cols || row < 0 || col < 0) {
-			throw new IllegalArgumentException("Cannot check location outside of grid");
-		}
-		
-		if (locations[row][col].getPiece() == null) {
-			return false;
-		} else {
-			return true;
-		}
-	}
+
 }
