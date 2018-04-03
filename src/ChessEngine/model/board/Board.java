@@ -1,5 +1,7 @@
 package ChessEngine.model.board;
 
+import ChessEngine.model.piece.Piece;
+
 public class Board {
 	
 	private Location[][] locations;
@@ -20,6 +22,10 @@ public class Board {
 				locations[i][j] = new Location(i, j, null);
 			}
 		}
+	}
+	
+	public void add(Piece p) {
+		
 	}
 	
 	

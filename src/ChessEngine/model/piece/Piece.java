@@ -11,6 +11,10 @@ public abstract class Piece {
 	protected Piece(int pointValue, Location location) {
 		
 	}
+
+	public void move(Location location) {
+		// TODO Auto-generated method stub
+	}
 	
 	
 }
