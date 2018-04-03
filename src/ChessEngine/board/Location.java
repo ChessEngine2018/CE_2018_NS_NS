@@ -9,7 +9,4 @@ package ChessEngine.board;
  */
 public class Location {
 
-	public Location(int row, int col) {
-		
-	}
 }
