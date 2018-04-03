@@ -1,4 +1,4 @@
-package ChessEngine.board;
+package ChessEngine.model.board;
 
 /**
  * Class contains location objects, which have information about a specific

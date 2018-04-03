@@ -1,4 +1,4 @@
-package ChessEngine.piece;
+package ChessEngine.model.piece;
 
 public abstract class Piece {
 
