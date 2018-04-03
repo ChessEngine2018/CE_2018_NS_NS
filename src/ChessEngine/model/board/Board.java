@@ -4,24 +4,17 @@ import ChessEngine.model.piece.Piece;
 
 public class Board {
 	
-	private Location[][] locations;
-	private int rows = 8;
-	private int cols = 8;
+	public Grid grid;
 	
 	public Board() {
-		
+		initBoard();
 	}
 	
-	
 	/*
-	 * Initializes board of dimension rows x cols with empty Location objects
+	 * Method initializes an empty Grid
 	 */
 	public void initBoard() {
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < cols; j++) {
-				locations[i][j] = new Location(i, j, null);
-			}
-		}
+		this.grid = new Grid(8, 8);
 	}
 	
 	public void add(Piece p) {
