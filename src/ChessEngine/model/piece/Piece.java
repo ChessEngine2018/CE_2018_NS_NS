@@ -8,7 +8,7 @@ public abstract class Piece {
 	/**Location of piece*/
 	private Location location;
 	/** Piece team */
-	public static enum Team {BLACK, WHITE};
+	public static enum Team {BLACK, WHITE}; 
 	
 	public Piece(int pointValue, Location location) {
 		
