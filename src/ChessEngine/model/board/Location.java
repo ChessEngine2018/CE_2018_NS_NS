@@ -54,7 +54,7 @@ public class Location {
 			return false;
 		} else {
 			this.piece.move(location);
-			grid.add(piece);
+			Board.add(piece);
 			this.piece = null;
 			occupied = false;
 			return true;
@@ -66,6 +66,14 @@ public class Location {
 	}
 
 	public void add() {
-
+		
+	}
+	
+	public int getRow() {
+		return this.row;
+	}
+	
+	public int getCol() {
+		return this.col;
 	}
 }
