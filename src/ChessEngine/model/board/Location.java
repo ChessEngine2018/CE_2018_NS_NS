@@ -16,7 +16,6 @@ public class Location {
 	public int col;
 	private Piece piece;
 	private Grid grid;
-	private boolean occupied;
 	
 	public Location(int r, int c, Piece p) {
 		if (r > grid.rows || c > grid.cols || c < 0 || r < 0) {
@@ -37,5 +36,13 @@ public class Location {
 	
 	public void setPiece(Piece p) {
 		this.piece = p;
+	}
+	
+	public boolean isOccupied() {
+		if (this.getPiece() == null) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }

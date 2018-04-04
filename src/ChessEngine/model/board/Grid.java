@@ -1,9 +1,7 @@
 package ChessEngine.model.board;
 
-import ChessEngine.model.piece.Piece;
-
 /**
- * Class defines a grid of Location objects that represent spaces on the board,
+ * Class defines a grid of Location objects that represents spaces on board,
  * and provides operations to edit grid
  * 
  * @author Nathan Seamaon
@@ -26,6 +24,12 @@ public class Grid {
 		}
 	}
 	
+	/**
+	 * Returns the Location at the specified position on the Grid
+	 * @param row target row
+	 * @param col target column
+	 * @return Location object at position (row, col) on Grid 
+	 */
 	public Location getLocation(int row, int col) {
 		if (row > rows || col > cols || row < 0 || col < 0) {
 			throw new IllegalArgumentException("Cannot check location outside of grid");
@@ -33,6 +37,9 @@ public class Grid {
 		return this.locations[row][col];
 	}
 	
+	/**
+	 * Sets piece to null on all Location objects on the Grid
+	 */
 	public void clearGrid() {
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
@@ -41,27 +48,25 @@ public class Grid {
 		}
 	}
 	
+	/**
+	 * Checks specified position on Grid and determines whether the position is occupied
+	 * @param row target row
+	 * @param col target column
+	 * @return true if position is unoccupied;
+	 * false if position is occupied
+	 */
 	public boolean isOccupied(int row, int col) {
-		if (getLocation(row, col).getPiece() == null) {
-			return false;
-		} else {
-			return true;
-		}
+		return getLocation(row, col).isOccupied();
 	}
 	
-	/*
-	 * Moves piece to specified position. Does NOT contain logic that checks
-	 * whether move is legal according to rules of chess
+	/**
+	 * Replaces piece at Location A with piece at Location B. 
+	 * Does not contain logic that checks whether move is legal according to rules of chess
+	 * @param a Location A
+	 * @param b Location B
 	 */
-	public boolean move() { //TODO: Redo this method
-		if (location.isOccupied()) {
-			return false;
-		} else {
-			this.piece.move(location);
-			grid.add(piece);
-			this.piece = null;
-			occupied = false;
-			return true;
-		}
+	public void move(Location a, Location b) {
+		b.setPiece(a.getPiece());
+		a.setPiece(null);
 	}
 }

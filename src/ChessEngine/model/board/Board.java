@@ -10,11 +10,8 @@ public class Board {
 		initBoard();
 	}
 	
-	/*
-	 * Method initializes an empty Grid
-	 */
 	public void initBoard() {
-		this.grid = new Grid(ROWS, COLS);
+		this.grid = new Grid(8, 8);
 	}
 	
 	public void clear() {
