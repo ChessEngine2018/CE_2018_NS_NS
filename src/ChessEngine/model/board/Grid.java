@@ -14,6 +14,11 @@ public class Grid {
 	public int rows;
 	public int cols;
 	
+	/**
+	 * Initializes empty Grid of specified size.
+	 * @param rows number of rows
+	 * @param cols number of columns
+	 */
 	public Grid(int rows, int cols) {
 		this.rows = rows;
 		this.cols = cols;

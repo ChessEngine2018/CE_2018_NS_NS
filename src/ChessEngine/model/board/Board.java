@@ -11,6 +11,9 @@ public class Board {
 	
 	public Grid grid;
 	
+	/**
+	 * Initializes empty board.
+	 */
 	public Board() {
 		reset();
 	}
@@ -26,6 +29,12 @@ public class Board {
 		}
 	}
 	
+	/**
+	 * Add specified piece at specified position. Does not check for logic.
+	 * @param row target row
+	 * @param col target column
+	 * @param p piece
+	 */
 	public void add(int row, int col, Piece p) {
 		grid.add(row, col, p);
 	}
