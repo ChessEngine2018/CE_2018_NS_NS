@@ -1,8 +1,13 @@
 package ChessEngine.model.board;
 
-/*
- * Class defines a grid of Location objects that represent spaces on the board, and
- * provides operations to edit grid
+import ChessEngine.model.piece.Piece;
+
+/**
+ * Class defines a grid of Location objects that represent spaces on the board,
+ * and provides operations to edit grid
+ * 
+ * @author Nathan Seamaon
+ * @author Neil Shah
  */
 public class Grid {
 

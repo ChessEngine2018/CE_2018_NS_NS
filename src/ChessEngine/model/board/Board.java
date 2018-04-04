@@ -14,7 +14,7 @@ public class Board {
 	 * Method initializes an empty Grid
 	 */
 	public void initBoard() {
-		this.grid = new Grid(8, 8);
+		this.grid = new Grid(ROWS, COLS);
 	}
 	
 	public void clear() {
@@ -22,7 +22,7 @@ public class Board {
 	}
 	
 	public void add(Piece p) {
-		
+		grid.add(p);
 	}
 	
 	

@@ -16,7 +16,8 @@ public class Location {
 	public int col;
 	private Piece piece;
 	private Grid grid;
-
+	private boolean occupied;
+	
 	public Location(int r, int c, Piece p) {
 		if (r > grid.rows || c > grid.cols || c < 0 || r < 0) {
 			throw new IllegalArgumentException("Cannot create a Location outside of grid");
