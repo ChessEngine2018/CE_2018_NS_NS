@@ -24,6 +24,7 @@ public abstract class Piece {
 	protected Type type;
 	protected Team team;
 	
+	// Does not need Location. A Location contains a Piece, not the other way around.
 	protected Piece(Type type, Team team) {
 		this.type = type;
 		this.team = team;
