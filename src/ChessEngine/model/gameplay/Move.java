@@ -26,11 +26,13 @@ public class Move {
 		this.target = target_location;
 	}
 	
-	public void determineValid() {
+	private boolean isValid() {
 		// Initial piece must exist
-		if (initial.getPiece() == null) {
-			valid = false;
+		if (!(initial.isOccupied())) {
+			return false;
 		}
+		// TODO: Add logic. Need to add possible/legal moves for piece.
+		return true;
 	}
 	
 }
