@@ -2,8 +2,8 @@ package ChessEngine.model.board;
 import ChessEngine.model.piece.Piece;
 
 /**
- * Class defines a grid of Location objects that represents spaces on board,
- * and provides operations to edit grid
+ * Class defines a grid of Location objects that represents spaces on board
+ * and provides operations to edit the Grid.
  * 
  * @author Nathan Seamaon
  * @author Neil Shah
@@ -18,18 +18,18 @@ public class Grid {
 		this.rows = rows;
 		this.cols = cols;
 		
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < cols; j++) {
-				this.locations[i][j] = new Location(i, j);
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				this.locations[row][col] = new Location(row, col);
 			}
 		}
 	}
 	
 	/**
-	 * Returns the Location at the specified position on the Grid
+	 * Returns Location at specified position on the Grid
 	 * @param row target row
 	 * @param col target column
-	 * @return Location object at specified position on Grid 
+	 * @return Location at specified position on Grid 
 	 */
 	public Location getLocation(int row, int col) {
 		if (row > rows || col > cols || row < 0 || col < 0) {

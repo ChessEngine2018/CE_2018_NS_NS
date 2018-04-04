@@ -15,7 +15,6 @@ public class Board {
 		reset();
 	}
 	
-	
 	/**
 	 * If existing grid does not exist, initializes new empty Grid. Else clears the current grid.
 	 */
