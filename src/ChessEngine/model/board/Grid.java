@@ -1,4 +1,5 @@
 package ChessEngine.model.board;
+import ChessEngine.model.piece.Piece;
 
 /**
  * Class defines a grid of Location objects that represents spaces on board,
@@ -28,7 +29,7 @@ public class Grid {
 	 * Returns the Location at the specified position on the Grid
 	 * @param row target row
 	 * @param col target column
-	 * @return Location object at position (row, col) on Grid 
+	 * @return Location object at specified position on Grid 
 	 */
 	public Location getLocation(int row, int col) {
 		if (row > rows || col > cols || row < 0 || col < 0) {
@@ -38,12 +39,23 @@ public class Grid {
 	}
 	
 	/**
+	 * Adds specified Piece at specified position on the Grid. Does not contain logic that checks
+	 * whether add is legal according to rules of chess.
+	 * @param row target row
+	 * @param col target column
+	 * @param p piece
+	 */
+	public void add(int row, int col, Piece p) {
+		getLocation(row, col).setPiece(p);
+	}
+	
+	/**
 	 * Sets piece to null on all Location objects on the Grid
 	 */
 	public void clearGrid() {
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
-				getLocation(row, col).setPiece(null);
+				getLocation(row, col).clear();
 			}
 		}
 	}
@@ -61,7 +73,7 @@ public class Grid {
 	
 	/**
 	 * Replaces piece at Location A with piece at Location B. 
-	 * Does not contain logic that checks whether move is legal according to rules of chess
+	 * Does not contain logic that checks whether move is legal according to rules of chess.
 	 * @param a Location A
 	 * @param b Location B
 	 */

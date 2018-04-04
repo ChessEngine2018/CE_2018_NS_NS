@@ -1,5 +1,4 @@
 package ChessEngine.model.board;
-
 import ChessEngine.model.piece.Piece;
 
 /**
@@ -44,5 +43,9 @@ public class Location {
 		} else {
 			return true;
 		}
+	}
+	
+	public void clear() {
+		this.setPiece(null);
 	}
 }
