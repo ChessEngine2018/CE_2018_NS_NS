@@ -11,24 +11,21 @@ import ChessEngine.model.piece.*;
 public class Board {
 
 	public Grid grid;
+	private Board instance;
 
+	
+	public Board getBoard() {
+		if(instance == null) {
+			Board();
+		}
+		return instance;
+	}
+	
 	/**
 	 * Initializes empty board.
 	 */
-	public Board() {
-		reset();
-	}
-
-	/**
-	 * If existing grid does not exist, initializes new empty Grid. Else clears the
-	 * current grid.
-	 */
-	public void reset() {
-		if (grid == null) {
-			grid = new Grid(8, 8);
-		} else {
-			grid.clearGrid();
-		}
+	public void Board() {
+		grid = new Grid(8, 8);
 	}
 
 	/**
@@ -49,7 +46,6 @@ public class Board {
 	 * Resets board and initializes board to standard layout.
 	 */
 	public void standardBoard() {
-		reset();
 		add(0, 0, new Rook(Piece.Team.BLACK, grid.getLocation(0, 0)));
 		add(0, 1, new Knight(Piece.Team.BLACK, grid.getLocation(0, 1)));
 		add(0, 2, new Bishop(Piece.Team.BLACK, grid.getLocation(0, 2)));
