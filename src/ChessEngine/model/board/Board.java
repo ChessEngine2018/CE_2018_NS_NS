@@ -52,6 +52,15 @@ public class Board {
 		add(0, 5, new Bishop(Piece.Team.BLACK));
 		add(0, 6, new Knight(Piece.Team.BLACK));
 		add(0, 7, new Rook(Piece.Team.BLACK));
+		add(1, 7, new Pawn(Piece.Team.BLACK));
+		add(1, 6, new Pawn(Piece.Team.BLACK));
+		add(1, 5, new Pawn(Piece.Team.BLACK));
+		add(1, 4, new Pawn(Piece.Team.BLACK));
+		add(1, 3, new Pawn(Piece.Team.BLACK));
+		add(1, 2, new Pawn(Piece.Team.BLACK));
+		add(1, 1, new Pawn(Piece.Team.BLACK));
+		add(1, 0, new Pawn(Piece.Team.BLACK));
+		
 		
 		add(7, 0, new Rook(Piece.Team.WHITE));
 		add(7, 1, new Knight(Piece.Team.WHITE));
@@ -61,6 +70,14 @@ public class Board {
 		add(7, 5, new Bishop(Piece.Team.WHITE));
 		add(7, 6, new Knight(Piece.Team.WHITE));
 		add(7, 7, new Rook(Piece.Team.WHITE));
+		add(6, 7, new Pawn(Piece.Team.WHITE));
+		add(6, 6, new Pawn(Piece.Team.WHITE));
+		add(6, 5, new Pawn(Piece.Team.WHITE));
+		add(6, 4, new Pawn(Piece.Team.WHITE));
+		add(6, 3, new Pawn(Piece.Team.WHITE));
+		add(6, 2, new Pawn(Piece.Team.WHITE));
+		add(6, 1, new Pawn(Piece.Team.WHITE));
+		add(6, 0, new Pawn(Piece.Team.WHITE));
 		
 		for (int col = 0; col < grid.cols; col++) {
 			add(1, col, new Pawn(Piece.Team.BLACK));
