@@ -1,8 +1,11 @@
 package ChessEngine.model.piece;
 
+import ChessEngine.model.board.Location;
+
 public class King extends Piece {
-	
-	public King(Piece.Team team) {
-		super(Piece.Type.KING, team);
+	private static final int POINT_VAL = 5;
+
+	public King(Piece.Team team, Location loc) {
+		super(Piece.Type.KING, team, loc, 5);
 	}
 }

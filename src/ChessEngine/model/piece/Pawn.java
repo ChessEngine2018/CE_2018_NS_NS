@@ -1,8 +1,11 @@
 package ChessEngine.model.piece;
 
+import ChessEngine.model.board.Location;
+
 public class Pawn extends Piece {
+	private static final int POINT_VAL = 1; 
 	
-	public Pawn(Piece.Team team) {
-		super(Piece.Type.PAWN, team);
+	public Pawn(Piece.Team team, Location loc) {
+		super(Piece.Type.PAWN, team, loc, POINT_VAL);
 	}
 }

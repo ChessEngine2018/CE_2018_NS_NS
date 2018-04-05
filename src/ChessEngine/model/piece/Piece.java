@@ -16,22 +16,31 @@ public abstract class Piece {
 	public static enum Type {
 		KING, QUEEN, BISHOP, KNIGHT, ROOK, PAWN
 	};
-	
+
 	public static enum Team {
 		BLACK, WHITE
 	};
 
 	protected Type type;
 	protected Team team;
-	
-	// Does not need Location. A Location contains a Piece, not the other way around.
-	protected Piece(Type type, Team team) {
+	private Location location;
+	private int pointValue;
+
+	// Does not need Location. A Location contains a Piece, not the other way
+	// around.
+	protected Piece(Type type, Team team, Location loc, int pointValue) {
+		if(type == null) {
+			throw new IllegalArgumentException("Type cannot be null.");
+		}
+		if(team == null) {
+			throw new IllegalArgumentException("Team cannot be null.");
+		}
+		if(pointValue < 1 || pointValue > 4) {
+			throw new IllegalArgumentException("Point value must be between 1 and 5.");
+		}
 		this.type = type;
 		this.team = team;
-	}
-	
-	public void move(Location location) {
-		// TODO Auto-generated method stub
+		this.location = loc;
 	}
 
 }
