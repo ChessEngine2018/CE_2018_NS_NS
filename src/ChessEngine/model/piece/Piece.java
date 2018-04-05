@@ -1,6 +1,6 @@
 package ChessEngine.model.piece;
-
 import ChessEngine.model.board.Location;
+import ChessEngine.model.gameplay.Move;
 
 /**
  * Abstract class for piece. Piece objects have a location, a value, and a team.
@@ -30,8 +30,8 @@ public abstract class Piece {
 		this.team = team;
 	}
 	
-	public void move(Location location) {
-		// TODO Auto-generated method stub
+	protected List<Move> getMoves(Location location) {
+		
 	}
 
 }
