@@ -18,5 +18,6 @@ public class Pawn extends Piece {
 	
 	public boolean getHasMoved() {
 		return hasMoved;
+		
 	}
 }
