@@ -3,6 +3,7 @@ package ChessEngine.model.gameplay;
 import ChessEngine.model.board.*;
 import ChessEngine.model.piece.Pawn;
 import ChessEngine.model.piece.Piece;
+import ChessEngine.model.piece.Piece.Team;
 
 /**
  * Class defines Move objects, which contain information about each move. This
@@ -40,13 +41,28 @@ public class Move {
 		if (peice.getType() == Piece.Type.PAWN) {
 			Pawn pawn = (Pawn) peice;
 			if (pawn.getHasMoved() == false) {
-
-				if (target == board.getGrid().getLocation(initial.getRow() + 1, initial.getCol())
-						|| (target == board.getGrid().getLocation(initial.getRow() + 2, initial.getCol()))) {
-					if (!target.isOccupied()) {
-						return true;
+				if (pawn.getTeam() == Team.BLACK) {
+					if (target == board.getGrid().getLocation(initial.getRow() + 1, initial.getCol())
+							|| (target == board.getGrid().getLocation(initial.getRow() + 2, initial.getCol()))) {
+						if (!target.isOccupied()) {
+							return true;
+						} else {
+							return false;
+						}
 					} else {
-						return false;
+						if (!target.isOccupied()) {
+							if (target == board.getGrid().getLocation((initial.getRow() + 1), initial.getCol())) {
+								return true;
+							} else {
+								if (((target.getRow() + 1) == initial.getRow())
+										&& (((target.getCol() - 1) == initial.getCol())
+												|| (target.getCol() + 1) == initial.getCol())) {
+									return true;
+								} else {
+									return false;
+								}
+							}
+						}
 					}
 				} else {
 					if (!target.isOccupied()) {
@@ -63,22 +79,10 @@ public class Move {
 						}
 					}
 				}
-			} else {
-				if (!target.isOccupied()) {
-					if (target == board.getGrid().getLocation((initial.getRow() + 1), initial.getCol())) {
-						return true;
-					} else {
-						if (((target.getRow() + 1) == initial.getRow())
-								&& (((target.getCol() - 1) == initial.getCol())
-										|| (target.getCol() + 1) == initial.getCol())) {
-							return true;
-						} else {
-							return false;
-						}
-					} 
 			}
-		}
-		return false;
-	}
 
+			return false;
+		}
+
+	}
 }

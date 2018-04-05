@@ -46,5 +46,9 @@ public abstract class Piece {
 	public Piece.Type getType(){
 		return this.type;
 	}
+	
+	public Team getTeam() {
+		return team;
+	}
 
 }
