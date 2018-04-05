@@ -42,5 +42,9 @@ public abstract class Piece {
 		this.team = team;
 		this.location = loc;
 	}
+	
+	public Piece.Type getType(){
+		return this.type;
+	}
 
 }
