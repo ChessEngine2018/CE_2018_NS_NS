@@ -39,22 +39,46 @@ public class Move {
 		Piece peice = this.initial.getPiece();
 		if (peice.getType() == Piece.Type.PAWN) {
 			Pawn pawn = (Pawn) peice;
-			if (pawn.getHasMoved() == false)
-				;
-			if (target == board.getGrid().getLocation(initial.getRow() + 1, initial.getCol())
-					|| (target == board.getGrid().getLocation(initial.getRow() + 2, initial.getCol()))) {
-				if (!target.isOccupied()) {
-					return true;
+			if (pawn.getHasMoved() == false) {
+
+				if (target == board.getGrid().getLocation(initial.getRow() + 1, initial.getCol())
+						|| (target == board.getGrid().getLocation(initial.getRow() + 2, initial.getCol()))) {
+					if (!target.isOccupied()) {
+						return true;
+					} else {
+						return false;
+					}
 				} else {
-					return false;
+					if (!target.isOccupied()) {
+						if (target == board.getGrid().getLocation((initial.getRow() + 1), initial.getCol())) {
+							return true;
+						} else {
+							if (((target.getRow() + 1) == initial.getRow())
+									&& (((target.getCol() - 1) == initial.getCol())
+											|| (target.getCol() + 1) == initial.getCol())) {
+								return true;
+							} else {
+								return false;
+							}
+						}
+					}
 				}
 			} else {
-				if((target == board.getGrid().getLocation((initial.getRow() + 1), initial.getCol())) && !target.isOccupied()) {
-					return true;
-				}
+				if (!target.isOccupied()) {
+					if (target == board.getGrid().getLocation((initial.getRow() + 1), initial.getCol())) {
+						return true;
+					} else {
+						if (((target.getRow() + 1) == initial.getRow())
+								&& (((target.getCol() - 1) == initial.getCol())
+										|| (target.getCol() + 1) == initial.getCol())) {
+							return true;
+						} else {
+							return false;
+						}
+					} 
 			}
 		}
-		return true;
+		return false;
 	}
 
 }
