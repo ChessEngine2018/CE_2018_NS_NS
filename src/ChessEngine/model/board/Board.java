@@ -11,12 +11,12 @@ import ChessEngine.model.piece.*;
 public class Board {
 
 	public Grid grid;
-	private Board instance;
+	private static Board instance;
 
 	
-	public Board getBoard() {
+	public static Board getBoard() {
 		if(instance == null) {
-			Board();
+			instance = new Board();
 		}
 		return instance;
 	}
