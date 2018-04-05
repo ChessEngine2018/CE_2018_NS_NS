@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import ChessEngine.model.board.Board;
 import ChessEngine.model.board.Location;
+import ChessEngine.model.gameplay.Move;
 
 public class Pawn extends Piece {
 
@@ -23,7 +24,7 @@ public class Pawn extends Piece {
 		return hasMoved;
 	}
 	
-	public ArrayList<Location> getValidMoves() {
+	public ArrayList<Move> getValidMoves() {
 		Board board = Board.getBoard();
 		if(this.team == Team.BLACK) {
 			if(!hasMoved) {
