@@ -1,9 +1,16 @@
 package ChessEngine.model.gameplay;
+
 import ChessEngine.model.board.*;
+import ChessEngine.model.piece.Pawn;
 import ChessEngine.model.piece.Piece;
+import ChessEngine.model.piece.Piece.Team;
+
 /**
  * Class defines Move objects, which contain information about each move. This includes:
  * pieces involved and validity of move.
+ * 
+ * Contains logic that determines whether a move is valid according to the rules
+ * of chess.
  * 
  * @author Neil Shah
  * @author Nathan Seamon

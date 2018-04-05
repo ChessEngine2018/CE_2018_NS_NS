@@ -14,9 +14,9 @@ public class Location {
 	public int row;
 	public int col;
 	private Piece piece;
-
+	
 	public Location(int r, int c, Piece p) {
-		if (r > grid.rows || c > grid.cols || c < 0 || r < 0) {
+		if (r > 	7 || c > 7 || c < 0 || r < 0) {
 			throw new IllegalArgumentException("Cannot create a Location outside of grid");
 		}
 		this.row = r;
@@ -46,5 +46,13 @@ public class Location {
 	
 	public void clear() {
 		this.setPiece(null);
+	}
+	
+	public int getCol() {
+		return col;
+	}
+	
+	public int getRow() {
+		return row;
 	}
 }
