@@ -15,4 +15,8 @@ public class Pawn extends Piece {
 	public void movedOnce() {
 		hasMoved = true;
 	}
+	
+	public boolean getHasMoved() {
+		return hasMoved;
+	}
 }

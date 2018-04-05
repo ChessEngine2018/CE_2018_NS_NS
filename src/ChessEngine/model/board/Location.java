@@ -48,4 +48,12 @@ public class Location {
 	public void clear() {
 		this.setPiece(null);
 	}
+	
+	public int getCol() {
+		return col;
+	}
+	
+	public int getRow() {
+		return row;
+	}
 }
