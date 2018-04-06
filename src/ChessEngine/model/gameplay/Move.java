@@ -1,42 +1,36 @@
 package ChessEngine.model.gameplay;
 
 import ChessEngine.model.board.*;
-import ChessEngine.model.piece.Pawn;
 import ChessEngine.model.piece.Piece;
-import ChessEngine.model.piece.Piece.Team;
 
 /**
- * Class defines Move objects, which contain information about each move. This includes:
- * pieces involved and validity of move.
- * 
- * Contains logic that determines whether a move is valid according to the rules
- * of chess.
+ * Class defines Move objects, which contain information about each move.
  * 
  * @author Neil Shah
  * @author Nathan Seamon
  *
  */
 public class Move {
-	
-	private Board board;
+
 	private Piece.Team turn;
-	private Location initial;
-	private Location target;
-	private boolean valid;
-	
-	public Move(Board board, Piece.Team turn, Location initial_location, Location target_location) {
-		this.board = board;
+	private Location start_position;
+	private Location final_position;
+
+	public Move(Piece.Team turn, Location start_position, Location final_position) {
 		this.turn = turn;
-		this.initial = initial_location;
-		this.target = target_location;
+		this.start_position = start_position;
+		this.final_position = final_position;
 	}
 	
-	public Location getInitial() {
-		return this.initial;
+	public Piece.Team getTurn() {
+		return this.turn;
 	}
 	
-	public Location getTarget() {
-		return this.target;
+	public Location getStart() {
+		return this.start_position;
 	}
 	
+	public Location getFinal() {
+		return this.final_position;
+	}
 }

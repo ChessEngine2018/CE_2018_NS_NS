@@ -11,8 +11,8 @@ import ChessEngine.model.piece.Piece;
  */
 public class Location {
 
-	public int row;
-	public int col;
+	private int row;
+	private int col;
 	private Piece piece;
 	
 	public Location(int r, int c, Piece p) {

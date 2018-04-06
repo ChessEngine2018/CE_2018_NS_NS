@@ -1,5 +1,11 @@
 package ChessEngine.model.piece;
 
+import java.util.List;
+import java.util.LinkedList;
+
+import ChessEngine.model.board.Board;
+import ChessEngine.model.gameplay.Move;
+import ChessEngine.model.piece.Piece.Team;
 import ChessEngine.model.board.Location;
 
 /**
@@ -23,24 +29,29 @@ public abstract class Piece {
 
 	protected Type type;
 	protected Team team;
-	private Location location;
-	private int pointValue;
+	private int point_value;
+	protected boolean has_moved;
 
-	// Does not need Location. A Location contains a Piece, not the other way
-	// around.
-	protected Piece(Type type, Team team, Location loc, int pointValue) {
+	/**
+	 * Abstract constructor for chess pieces. Use subclass constructors to create specific pieces.
+	 * @param type Type of piece (King, Queen, Bishop, Knight, Rook, or Pawn)
+	 * @param team Color of piece (Black or White)
+	 * @param point_value Point value of piece (integer from 1 to 5)
+	 */
+	protected Piece(Type type, Team team, int point_value) {
 		if(type == null) {
 			throw new IllegalArgumentException("Type cannot be null.");
 		}
 		if(team == null) {
 			throw new IllegalArgumentException("Team cannot be null.");
 		}
-		if(pointValue < 1 || pointValue > 4) {
-			throw new IllegalArgumentException("Point value must be between 1 and 5.");
+		if(point_value < 1 || point_value > 4) {
+			throw new IllegalArgumentException("Point value must be an integer from 1 to 5.");
 		}
 		this.type = type;
 		this.team = team;
-		this.location = loc;
+		this.point_value = point_value;
+		this.has_moved = false;
 	}
 	
 	public Piece.Type getType(){
@@ -50,5 +61,16 @@ public abstract class Piece {
 	public Team getTeam() {
 		return team;
 	}
-
+	
+	public int getValue() {
+		return this.point_value;
+	}
+	
+	protected List<Move> getMoves(Location location) {
+		List<Move> moves = new LinkedList<Move>();
+		/*
+		 * Implementing logic...
+		 */
+		return moves;
+	}
 }
