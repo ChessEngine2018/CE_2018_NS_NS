@@ -88,7 +88,7 @@ public abstract class Piece {
 		if (!location.isOccupied()) {
 			return moves;
 		}
-		
+		 
 		/*
 		 * Implement piece specific logic in respective subclass...
 		 */

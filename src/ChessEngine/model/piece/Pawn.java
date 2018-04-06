@@ -21,7 +21,7 @@ public class Pawn extends Piece {
 		List<Move> moves = new LinkedList<Move>();
 		
 		// If there is no piece on initial location, return empty list of moves.
-		if (!location.isOccupied()) {
+		if (!location.isOccupied()) { 
 			return moves;
 		}
 		
