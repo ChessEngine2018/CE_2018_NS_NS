@@ -1,5 +1,13 @@
 package ChessEngine.model.piece;
 
+import java.util.List;
+import java.util.LinkedList;
+
+import ChessEngine.model.board.Board;
+import ChessEngine.model.gameplay.Move;
+import ChessEngine.model.piece.Piece.Team;
+import ChessEngine.model.board.Location;
+
 /**
  * Abstract class for piece. Piece objects have a location, a value, and a team.
  * Abstract methods allow for individualized game functionality by piece
@@ -22,6 +30,7 @@ public abstract class Piece {
 	protected Type type;
 	protected Team team;
 	private int point_value;
+	protected boolean has_moved;
 
 	/**
 	 * Abstract constructor for chess pieces. Use subclass constructors to create specific pieces.
@@ -42,6 +51,7 @@ public abstract class Piece {
 		this.type = type;
 		this.team = team;
 		this.point_value = point_value;
+		this.has_moved = false;
 	}
 	
 	public Piece.Type getType(){
@@ -55,5 +65,12 @@ public abstract class Piece {
 	public int getValue() {
 		return this.point_value;
 	}
-
+	
+	protected List<Move> getMoves(Location location) {
+		List<Move> moves = new LinkedList<Move>();
+		/*
+		 * Implementing logic...
+		 */
+		return moves;
+	}
 }
