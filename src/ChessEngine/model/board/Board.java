@@ -10,33 +10,40 @@ import ChessEngine.model.piece.*;
  */
 public class Board {
 
-	public Grid grid;
-	private static Board instance;
-
+	private Grid grid;
+	private static Board board;
 	
-	public static Board getBoard() {
-		if(instance == null) {
-			instance = new Board();
-		}
-		return instance;
+	/**
+	 * To access board, use getBoard() to retrieve current instance of board.
+	 * See also {@link #getBoard()}
+	 */
+	private Board() {
+		grid = new Grid(8, 8);
 	}
 	
 	/**
-	 * Initializes empty board.
+	 * Board is implemented using Singleton pattern. One instance of board is maintained. If no instance exists, creates a new instance.
+	 * @return Current instance of board
 	 */
-	public void Board() {
-		grid = new Grid(8, 8);
+	public static Board getBoard() {
+		if(board == null) {
+			board = new Board();
+		}
+		return board;
+	}
+	
+	/**
+	 * Clears current instance of board. If board does not exist, will create a new instance of board.
+	 */
+	public void reset() {
+		getBoard().getGrid().clearGrid();
 	}
 
 	/**
 	 * Add specified piece at specified position. Does not check for logic.
-	 * 
-	 * @param row
-	 *            target row
-	 * @param col
-	 *            target column
-	 * @param p
-	 *            piece
+	 * @param row target row
+	 * @param col target column
+	 * @param p piece
 	 */
 	public void add(int row, int col, Piece p) {
 		grid.add(row, col, p);
@@ -46,6 +53,7 @@ public class Board {
 	 * Resets board and initializes board to standard layout.
 	 */
 	public void standardBoard() {
+		reset();
 		add(0, 0, new Rook(Piece.Team.BLACK, grid.getLocation(0, 0)));
 		add(0, 1, new Knight(Piece.Team.BLACK, grid.getLocation(0, 1)));
 		add(0, 2, new Bishop(Piece.Team.BLACK, grid.getLocation(0, 2)));
