@@ -65,7 +65,14 @@ public abstract class Piece {
 	public int getValue() {
 		return this.point_value;
 	}
-	
+
+	/**
+	 * Abstract implementation. Searches board and returns possible moves for a piece. 
+	 * Specific implementation logic included in subclass specific override of method. Each piece has
+	 * unique logic that determines what moves are possible.
+	 * @param location Start position of piece
+	 * @return Linked List containing possible Move objects
+	 */
 	protected List<Move> getMoves(Location location) {
 		List<Move> moves = new LinkedList<Move>();
 		/*
