@@ -32,6 +32,10 @@ public class Board {
 		return board;
 	}
 	
+	public Grid getGrid() {
+		return this.grid;
+	}
+	
 	/**
 	 * Clears current instance of board. If board does not exist, will create a new instance of board.
 	 */
@@ -81,7 +85,4 @@ public class Board {
 		}
 	}
 
-	public Grid getGrid() {
-		return this.grid;
-	}
 }
