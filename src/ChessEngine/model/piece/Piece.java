@@ -5,7 +5,6 @@ import java.util.LinkedList;
 
 import ChessEngine.model.board.Board;
 import ChessEngine.model.gameplay.Move;
-import ChessEngine.model.piece.Piece.Team;
 import ChessEngine.model.board.Location;
 
 /**
@@ -65,18 +64,33 @@ public abstract class Piece {
 	public int getValue() {
 		return this.point_value;
 	}
+	
+	public boolean getHasMoved() {
+		return this.has_moved;
+	}
+	
+	public void setHasMoved(boolean has_moved) {
+		this.has_moved = has_moved;
+	}
 
 	/**
-	 * Abstract implementation. Searches board and returns possible moves for a piece. 
+	 * Searches board and returns possible moves for a piece. 
 	 * Specific implementation logic included in subclass specific override of method. Each piece has
 	 * unique logic that determines what moves are possible.
 	 * @param location Start position of piece
 	 * @return Linked List containing possible Move objects
 	 */
 	protected List<Move> getMoves(Location location) {
+		Board board = Board.getBoard();
 		List<Move> moves = new LinkedList<Move>();
+		
+		// If there is no piece on initial location, return empty list of moves.
+		if (!location.isOccupied()) {
+			return moves;
+		}
+		
 		/*
-		 * Implementing logic...
+		 * Implement piece specific logic in respective subclass...
 		 */
 		return moves;
 	}

@@ -52,6 +52,16 @@ public class Board {
 	public void add(int row, int col, Piece p) {
 		grid.add(row, col, p);
 	}
+	
+	/**
+	 * Searches the board and returns the Location and the specified position.
+	 * @param row target row
+	 * @param col target col
+	 * @return Location object at specified position
+	 */
+	public Location search(int row, int col) {
+		return getGrid().getLocation(row, col);
+	}
 
 	/**
 	 * Resets board and initializes board to standard layout.
