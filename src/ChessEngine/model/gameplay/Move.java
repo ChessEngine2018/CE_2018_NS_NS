@@ -13,13 +13,24 @@ import ChessEngine.model.piece.Piece;
 public class Move {
 
 	private Piece.Team turn;
-	private Location initial;
-	private Location target;
+	private Location start_position;
+	private Location final_position;
 
-	public Move(Piece.Team turn, Location initial_location, Location target_location) {
+	public Move(Piece.Team turn, Location start_position, Location final_position) {
 		this.turn = turn;
-		this.initial = initial_location;
-		this.target = target_location;
+		this.start_position = start_position;
+		this.final_position = final_position;
 	}
 	
+	public Piece.Team getTurn() {
+		return this.turn;
+	}
+	
+	public Location getStart() {
+		return this.start_position;
+	}
+	
+	public Location getFinal() {
+		return this.final_position;
+	}
 }
