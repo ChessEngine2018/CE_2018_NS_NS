@@ -44,6 +44,7 @@ public class Bishop extends Piece {
 			temp = row;
 			isRow = true;
 		}
+		
 		Boolean inWay = false;
 		while (!inWay) {
 			int j = 0;

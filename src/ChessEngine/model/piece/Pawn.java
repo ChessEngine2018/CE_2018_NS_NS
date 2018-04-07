@@ -68,27 +68,27 @@ public class Pawn extends Piece {
 			// If the pawn hasn't moved yet
 			if (!getHasMoved()) {
 				if (!grid.getLocation((row - 1), col).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), col)));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), col)));
 				}
 				if (!grid.getLocation((row - 2), col).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 2), col)));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 2), col)));
 				}
 				if ((col <= 6) || grid.getLocation((row - 1), (col + 1)).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), (col + 1))));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), (col + 1))));
 				}
 				if ((col >= 1) || grid.getLocation((row - 1), (col - 1)).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), (col - 1))));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), (col - 1))));
 				}
 				// If the pawn has moved
 			} else {
 				if (!grid.getLocation((row - 1), col).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), col)));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), col)));
 				}
 				if ((col <= 6) || grid.getLocation((row - 1), (col + 1)).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), (col + 1))));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), (col + 1))));
 				}
 				if ((col >= 1) || grid.getLocation((row - 1), (col - 1)).isOccupied()) {
-					moves.add(new Move(Team.BLACK, loc, grid.getLocation((row - 1), (col - 1))));
+					moves.add(new Move(Team.WHITE, loc, grid.getLocation((row - 1), (col - 1))));
 				}
 			}
 		}
