@@ -94,5 +94,5 @@ public class Board {
 			add(6, col, new Pawn(Piece.Team.WHITE, grid.getLocation(0, col)));
 		}
 	}
-
+	
 }
