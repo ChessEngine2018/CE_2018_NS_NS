@@ -24,7 +24,7 @@ public class Bishop extends Piece {
 	 *            location of piece
 	 */
 	public List<Move> getMoves(Location loc) {
-		
+
 		int row = loc.getRow();
 		int col = loc.getCol();
 		Team team = this.getTeam();
@@ -32,9 +32,50 @@ public class Bishop extends Piece {
 
 		Board board = Board.getBoard();
 		Grid grid = board.getGrid();
-		
-		
 
-		return null;
+		/*
+		 * Checks up and to the right
+		 */
+		int temp = 0;
+		Boolean isRow = false;
+		if (col > row) {
+			temp = col;
+		} else {
+			temp = row;
+			isRow = true;
+		}
+		Boolean inWay = false;
+		while (!inWay) {
+			int j = 0;
+			if (isRow) {
+				for (int i = temp; i < 8; i++) {
+					j++;
+					if (grid.getLocation(i, (col + j)) != null) {
+						if (grid.getLocation(i, (col + j)).isOccupied()) {
+							moves.add(new Move(team, loc, grid.getLocation(i, (col + j))));
+							inWay = true;
+						} else {
+							moves.add(new Move(team, loc, grid.getLocation((row + j), i)));
+						}
+					}
+				}
+			} else {
+				for (int i = temp; i < 8; i++) {
+					j++;
+					if (grid.getLocation((row + j), i) != null) {
+						if (grid.getLocation((row + j), i).isOccupied()) {
+							moves.add(new Move(team, loc, grid.getLocation((row + j), i)));
+							inWay = true;
+						} else {
+							moves.add(new Move(team, loc, grid.getLocation((row + j), i)));
+						}
+					}
+				}
+			}
+		}
+		/*
+		 * Checks down and to the left
+		 */
+		return moves;
 	}
 }

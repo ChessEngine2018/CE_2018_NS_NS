@@ -38,7 +38,7 @@ public class Grid {
 	 */
 	public Location getLocation(int row, int col) {
 		if (row > rows || col > cols || row < 0 || col < 0) {
-			throw new IllegalArgumentException("Cannot check location outside of grid");
+			return null;
 		}
 		return this.locations[row][col];
 	}
