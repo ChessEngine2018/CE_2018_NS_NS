@@ -12,7 +12,7 @@ public class Pawn extends Piece {
 
 	private static final int POINT_VAL = 1;
 
-	public Pawn(Team team, Location loc) {
+	public Pawn(Team team) {
 		super(Type.PAWN, team, POINT_VAL);
 	}
 

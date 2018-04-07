@@ -12,7 +12,7 @@ public class Rook extends Piece {
 
 	private static final int POINT_VAL = 3;
 
-	public Rook(Piece.Team team, Location loc) {
+	public Rook(Piece.Team team) {
 		super(Piece.Type.ROOK, team, POINT_VAL);
 	}
 
