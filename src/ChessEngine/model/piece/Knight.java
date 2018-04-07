@@ -29,6 +29,10 @@ public class Knight extends Piece {
 		int col = loc.getCol();
 		Team team = this.getTeam();
 		List<Move> moves = new LinkedList<Move>();
+		
+		if(!loc.isOccupied()) {
+			return moves;
+		}
 
 		Board board = Board.getBoard();
 		Grid grid = board.getGrid();
