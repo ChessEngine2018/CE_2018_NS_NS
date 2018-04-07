@@ -29,8 +29,8 @@ public class Bishop extends Piece {
 		int col = loc.getCol();
 		Team team = this.getTeam();
 		List<Move> moves = new LinkedList<Move>();
-		
-		if(!loc.isOccupied()) {
+
+		if (!loc.isOccupied()) {
 			return moves;
 		}
 
@@ -48,7 +48,7 @@ public class Bishop extends Piece {
 			temp = row;
 			isRow = true;
 		}
-		
+
 		Boolean inWay = false;
 		while (!inWay) {
 			int j = 0;
@@ -81,6 +81,37 @@ public class Bishop extends Piece {
 		/*
 		 * Checks down and to the left
 		 */
+		isRow = false;
+		if (col < row) {
+			temp = col;
+		} else {
+			temp = row;
+			isRow = true;
+		}
+		inWay = false;
+		while (!inWay) {
+			int j = 0;
+			if (isRow) {
+				for (int i = temp; i >= 0; i--) {
+					if (grid.getLocation(i, (col - j)).isOccupied()) {
+						moves.add(new Move(team, loc, grid.getLocation(i, (col - j))));
+						inWay = true;
+					} else {
+						moves.add(new Move(team, loc, grid.getLocation(i, (col - j))));
+					}
+				}
+			} else {
+				for (int i = temp; i >= 0; i--) {
+					if (grid.getLocation((row - j), i).isOccupied()) {
+						moves.add(new Move(team, loc, grid.getLocation((row - j), i)));
+						inWay = true;
+					} else {
+						moves.add(new Move(team, loc, grid.getLocation((row - j), i)));
+					}
+				}
+			}
+		}
+
 		return moves;
 	}
 }
