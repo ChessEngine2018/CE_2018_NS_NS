@@ -24,7 +24,7 @@ public class Knight extends Piece {
 	 *            location of piece
 	 */
 	public List<Move> getMoves(Location loc) {
-		
+
 		int row = loc.getRow();
 		int col = loc.getCol();
 		Team team = this.getTeam();
@@ -33,39 +33,51 @@ public class Knight extends Piece {
 		Board board = Board.getBoard();
 		Grid grid = board.getGrid();
 
-		
-		if(((row + 2) < (8)) && ((col + 1) < 8)) {
+		/*
+		 * Checks up and to the right
+		 */
+		if (((row + 2) < (8)) && ((col + 1) < 8)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row + 2), (col + 1))));
 		}
-		
-		if(((row + 1) < (8)) && ((col + 2) < 8)) {
+
+		if (((row + 1) < (8)) && ((col + 2) < 8)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row + 1), (col + 2))));
 		}
-		
 
-		if(((row + 2) < (8)) && ((col - 1) >= 0)) {
+		
+		/*
+		 *  Checks up and to the left
+		 */
+		if (((row + 2) < (8)) && ((col - 1) >= 0)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row + 2), (col - 1))));
 		}
-		
-		if(((row + 1) < 8) && ((col - 2) >= 0)) {
+
+		if (((row + 1) < 8) && ((col - 2) >= 0)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row + 1), (col - 2))));
 		}
-		
-		if(((row - 2) >= 0) && ((col - 1) >= 0)) {
+
+		/*
+		 * Checks down and to the left
+		 */
+		if (((row - 2) >= 0) && ((col - 1) >= 0)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row - 2), (col - 1))));
 		}
-		
-		if(((row - 1) >= 0) && ((col - 2) >= 0)) {
+
+		if (((row - 1) >= 0) && ((col - 2) >= 0)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row - 1), (col - 2))));
 		}
-		if(((row - 2) >= 0) && ((col + 1) < 8)) {
+
+		/*
+		 *  Checks down and to the right
+		 */
+		if (((row - 2) >= 0) && ((col + 1) < 8)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row - 2), (col + 1))));
 		}
-		
-		if(((row - 1) >= 0) && ((col + 2) < 8)) {
+
+		if (((row - 1) >= 0) && ((col + 2) < 8)) {
 			moves.add(new Move(this.getTeam(), loc, grid.getLocation((row - 1), (col + 2))));
 		}
-		
+
 		return moves;
 	}
 
