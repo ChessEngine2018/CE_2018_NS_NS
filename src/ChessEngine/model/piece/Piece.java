@@ -78,20 +78,6 @@ public abstract class Piece {
 	 * Specific implementation logic included in subclass specific override of method. Each piece has
 	 * unique logic that determines what moves are possible.
 	 * @param location Start position of piece
-	 * @return Linked List containing possible Move objects
 	 */
-	protected List<Move> getMoves(Location location) {
-		Board board = Board.getBoard();
-		List<Move> moves = new LinkedList<Move>();
-		
-		// If there is no piece on initial location, return empty list of moves.
-		if (!location.isOccupied()) {
-			return moves;
-		}
-		 
-		/*
-		 * Implement piece specific logic in respective subclass...
-		 */
-		return moves;
-	}
+	protected abstract List<Move> getMoves(Location location); 
 }

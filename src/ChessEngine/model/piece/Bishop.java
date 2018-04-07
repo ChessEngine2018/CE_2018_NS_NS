@@ -33,6 +33,7 @@ public class Bishop extends Piece {
 		Board board = Board.getBoard();
 		Grid grid = board.getGrid();
 		
+		
 
 		return null;
 	}
